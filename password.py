@@ -1,6 +1,6 @@
 import os, random, string
 
-length = 10
+length = 3
 print("*********************************************************")
 name = input("Enter a word that you want to use for password \n" )
 print("*********************************************************")
@@ -11,8 +11,9 @@ print("*********************************************************")
 
 for passw in range(TO_GENERATE):
     
-    chars = string.ascii_letters + string.digits + '!@#$%^&*()'
-    random.seed = (os.urandom(1024))
+    chars = string.ascii_letters
+    digits =  string.digits 
+    sp = '!@#$%^&*()'
 
-    a = (''.join(random.choice(chars) for i in range(length)))
-    print(name + "!"+ a)
+    a = (''.join(random.choice(chars) + ''.join(random.choice(digits) + ''.join(random.choice(sp))) for i in range(length)))
+    print(name + a)
